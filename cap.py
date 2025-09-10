@@ -14,6 +14,10 @@ def click(x: int, y: int, wait=0.05):
 
 def buy_land():
     while(True):
+        click(1001,915,0.2)
+        print("点购买")
+        cv2.waitKey(200)
+
         import mss, numpy as np,cv2
         with mss.mss() as sct:
             frame = np.array(sct.grab(sct.monitors[0]))  # BGRA
@@ -31,9 +35,7 @@ def buy_land():
         click(x,y)
         print("点金币")
         
-        click(1001,915,0.3)
-        print("点购买")
-        cv2.waitKey(300)
+        
         
 # 注册全局热键（异步回调，不阻塞主线程）
 keyboard.add_hotkey('ctrl+.', buy_land)
