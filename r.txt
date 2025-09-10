@@ -1,3 +1,4 @@
 opencv_python
 keyboard
 mss
+pywin32
