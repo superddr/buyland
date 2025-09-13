@@ -11,14 +11,14 @@ def click(x: int, y: int, wait=0.05):
     time.sleep(wait)  
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, 0, 0)
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, 0, 0)
-
+import mss, numpy as np,cv2
 def buy_land():
     while(True):
         click(1001,915,0.2)
         print("点购买")
         cv2.waitKey(200)
 
-        import mss, numpy as np,cv2
+        
         with mss.mss() as sct:
             frame = np.array(sct.grab(sct.monitors[0]))  # BGRA
 
